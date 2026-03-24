@@ -1,28 +1,26 @@
 package strings;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 public class LongestSubStringWithoutRepeatingCharacters {
 
-    public static int longestStringWithoutRepeatingCharacters(String string){
-        if (string == null || string.length() == 0) return 0;
+    public static int longestStringWithoutRepeatingCharacters(String s){
+        if (s == null || s.length() == 0) return 0;
 
+        Set<Character> set = new HashSet<>();
         int maxLength=0;
-        char[] chars = string.toCharArray();
-        Map<Character ,Integer> map = new HashMap<>();
+        int left=0;
 
-        int length = 0;
-        for (int i = 0; i <string.length(); i++) {
-            if (!map.containsKey(chars[i])) {
-                map.put(chars[i], i);
-                length++;
-            }else {
-                maxLength = Math.max(maxLength, length);
-                map.remove(chars[i]);
-                length--;
-                i--;
+        for (int right = 0; right < s.length() ; right++) {
+
+            while (set.contains(s.charAt(right))){
+                set.remove(s.charAt(left));
+                left++;
             }
+
+            set.add(s.charAt(right));
+            maxLength = Math.max(maxLength, right - left + 1);
         }
         return maxLength;
     }
