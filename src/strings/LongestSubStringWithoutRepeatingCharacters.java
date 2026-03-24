@@ -3,6 +3,10 @@ package strings;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+Problem Statement:
+Given a string s, find the length of the longest substring without repeating characters
+ */
 public class LongestSubStringWithoutRepeatingCharacters {
 
     public static int longestStringWithoutRepeatingCharacters(String s){
