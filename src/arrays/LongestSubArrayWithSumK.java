@@ -15,6 +15,7 @@ Output: 4
 Explanation: [1, -1, 5, -2] sums to 3
      */
 
+//Pattern : PrefixSum + Hashmap
     public static int longestSubArrayLength(int[] array, int k){
 
         Map<Integer,Integer> map = new HashMap<>();
