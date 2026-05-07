@@ -1,6 +1,6 @@
 package arrays;
 
-
+//this is unsolved i beleave.
 public class SmallestSubArrayWhoseSumIsGreaterOrEqualToTarget {
 
     public static int smallestSubArrayWhoseSumIsGreaterOrEqualToTarget(int[] array, int target ){
